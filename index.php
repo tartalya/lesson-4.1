@@ -8,6 +8,7 @@ $dbName = "lesson41";
 
 $link = mysqli_connect($dbHost, $userName, $dbPassword, $dbName);
 
+mysqli_set_charset($link, "utf8");
 
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
