@@ -22,9 +22,9 @@ $query = 'SELECT * FROM BOOKS ';
 
 if (!empty($_GET['isbn']) || !empty($_GET['name']) || !empty($_GET['author'])) {
 
-    $query .= 'WHERE isbn LIKE "%' . $_GET['isbn'] . '%" ';
-    $query .= 'and name LIKE "%' . $_GET['name'] . '%" ';
-    $query .= 'and author LIKE "%' . $_GET['author'] . '%" ';
+    $query .= 'WHERE isbn LIKE "%' . mysqli_real_escape_string($link, $_GET['isbn']) . '%" ';
+    $query .= 'and name LIKE "%' . mysqli_real_escape_string($link, $_GET['name']) . '%" ';
+    $query .= 'and author LIKE "%' . mysqli_real_escape_string($link, $_GET['author']) . '%" ';
 }
 
 
